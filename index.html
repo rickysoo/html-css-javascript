@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; object-src 'none';">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
     <!-- SEO Meta Tags -->
     <title>Learn HTML, CSS & JavaScript - Interactive Web Development Tutorial</title>
     <meta name="description" content="Learn web development with our interactive HTML, CSS, and JavaScript tutorial. Features live code editor, real-world examples, and hands-on demos. Perfect for beginners!">
@@ -52,7 +58,7 @@
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
     
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" />
 </head>
 <body>
     <header class="header">
@@ -277,7 +283,7 @@ document.getElementById('playBtn').addEventListener('click', function() {
 
                     <div class="result-panel">
                         <h4>Live Preview</h4>
-                        <iframe id="preview" class="preview-frame"></iframe>
+                        <iframe id="preview" class="preview-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -368,8 +374,8 @@ document.getElementById('playBtn').addEventListener('click', function() {
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3iK4ZFEPAOyLDODNPF2/NvD8pEA3kMdP+bQpCk4pNSXHyTTF7IrNlYQxcP3wO/3Qk8g==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMuuqg6ojBXYWdgAp6o/vOvhD3u9A2IRV32XlOPqcOoJSA==" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
