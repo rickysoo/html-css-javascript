@@ -1,3 +1,43 @@
+// Mobile Navigation Toggle
+const navToggle = document.getElementById('navToggle');
+const navList = document.getElementById('navList');
+
+function toggleMobileNav() {
+    navList.classList.toggle('active');
+    
+    // Animate hamburger icon
+    const hamburgers = navToggle.querySelectorAll('.hamburger');
+    if (navList.classList.contains('active')) {
+        hamburgers[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+        hamburgers[1].style.opacity = '0';
+        hamburgers[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+    } else {
+        hamburgers[0].style.transform = 'none';
+        hamburgers[1].style.opacity = '1';
+        hamburgers[2].style.transform = 'none';
+    }
+}
+
+navToggle.addEventListener('click', toggleMobileNav);
+
+// Close mobile nav when clicking on a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navList.classList.contains('active')) {
+            toggleMobileNav();
+        }
+    });
+});
+
+// Close mobile nav when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navList.contains(e.target)) {
+        if (navList.classList.contains('active')) {
+            toggleMobileNav();
+        }
+    }
+});
+
 // Theme Management
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
