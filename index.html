@@ -3,14 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Web Technologies Showcase</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Learn HTML, CSS & JavaScript - Interactive Web Development Tutorial</title>
+    <meta name="description" content="Learn web development with our interactive HTML, CSS, and JavaScript tutorial. Features live code editor, real-world examples, and hands-on demos. Perfect for beginners!">
+    <meta name="keywords" content="HTML tutorial, CSS tutorial, JavaScript tutorial, web development, learn coding, interactive tutorial, front-end development, programming for beginners">
+    <meta name="author" content="Web Technologies Showcase">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rickysoo.github.io/html-css-javascript/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Learn HTML, CSS & JavaScript - Interactive Web Development Tutorial">
+    <meta property="og:description" content="Master web development fundamentals with interactive examples, live code editor, and step-by-step tutorials. Learn HTML structure, CSS styling, and JavaScript interactivity.">
+    <meta property="og:image" content="https://rickysoo.github.io/html-css-javascript/preview.jpg">
+    <meta property="og:url" content="https://rickysoo.github.io/html-css-javascript/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Interactive Web Technologies Showcase">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learn HTML, CSS & JavaScript - Interactive Tutorial">
+    <meta name="twitter:description" content="Interactive web development tutorial with live code editor, examples, and hands-on learning. Perfect for beginners learning HTML, CSS, and JavaScript.">
+    <meta name="twitter:image" content="https://rickysoo.github.io/html-css-javascript/preview.jpg">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Interactive Web Technologies Showcase",
+      "description": "Interactive tutorial for learning HTML, CSS, and JavaScript web development",
+      "url": "https://rickysoo.github.io/html-css-javascript/",
+      "sameAs": [
+        "https://github.com/rickysoo/html-css-javascript"
+      ],
+      "educationalCredentialAwarded": "Web Development Fundamentals",
+      "teaches": [
+        "HTML",
+        "CSS", 
+        "JavaScript",
+        "Web Development",
+        "Front-end Development"
+      ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">Web Tech Showcase</h1>
+            <h2 class="logo">Web Tech Showcase</h2>
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#basics" class="nav-link">Basics</a></li>
@@ -25,10 +72,10 @@
 
     <main class="main">
         <!-- Hero Section -->
-        <section class="hero" id="home">
+        <section class="hero" id="home" role="banner">
             <div class="container">
-                <h2 class="hero-title">Learn How HTML, CSS & JavaScript Work Together</h2>
-                <p class="hero-subtitle">Interactive demonstrations and live code examples</p>
+                <h1 class="hero-title">Learn How HTML, CSS & JavaScript Work Together</h1>
+                <p class="hero-subtitle">Interactive demonstrations and live code examples for modern web development</p>
                 <div class="hero-demo">
                     <div class="demo-card" id="heroDemo">
                         <h3>Interactive Demo</h3>
@@ -39,15 +86,15 @@
         </section>
 
         <!-- Basics Section -->
-        <section class="section" id="basics">
+        <section class="section" id="basics" aria-labelledby="basics-title">
             <div class="container">
-                <h2 class="section-title">The Three Pillars of Web Development</h2>
+                <h2 class="section-title" id="basics-title">The Three Pillars of Web Development</h2>
                 
                 <div class="pillars">
                     <div class="pillar">
-                        <div class="pillar-icon">🏗️</div>
-                        <h3>HTML</h3>
-                        <p>Structure & Content</p>
+                        <div class="pillar-icon" aria-label="HTML structure icon">🏗️</div>
+                        <h3>HTML - HyperText Markup Language</h3>
+                        <p>Structure & Content - The foundation of web pages</p>
                         <div class="code-example">
                             <pre><code class="language-html">&lt;div class="card"&gt;
   &lt;h3&gt;Title&lt;/h3&gt;
@@ -58,9 +105,9 @@
                     </div>
 
                     <div class="pillar">
-                        <div class="pillar-icon">🎨</div>
-                        <h3>CSS</h3>
-                        <p>Style & Layout</p>
+                        <div class="pillar-icon" aria-label="CSS styling icon">🎨</div>
+                        <h3>CSS - Cascading Style Sheets</h3>
+                        <p>Style & Layout - Visual design and responsive layouts</p>
                         <div class="code-example">
                             <pre><code class="language-css">.card {
   background: #fff;
@@ -72,9 +119,9 @@
                     </div>
 
                     <div class="pillar">
-                        <div class="pillar-icon">⚡</div>
-                        <h3>JavaScript</h3>
-                        <p>Behavior & Interaction</p>
+                        <div class="pillar-icon" aria-label="JavaScript interactivity icon">⚡</div>
+                        <h3>JavaScript - Dynamic Programming Language</h3>
+                        <p>Behavior & Interaction - Dynamic functionality and user interaction</p>
                         <div class="code-example">
                             <pre><code class="language-javascript">button.addEventListener('click', () => {
   card.classList.toggle('active');
@@ -87,9 +134,9 @@
         </section>
 
         <!-- Integration Section -->
-        <section class="section" id="integration">
+        <section class="section" id="integration" aria-labelledby="integration-title">
             <div class="container">
-                <h2 class="section-title">How They Work Together</h2>
+                <h2 class="section-title" id="integration-title">How HTML, CSS & JavaScript Work Together</h2>
                 
                 <div class="integration-demo">
                     <div class="demo-tabs">
@@ -176,10 +223,10 @@
         </section>
 
         <!-- Playground Section -->
-        <section class="section" id="playground">
+        <section class="section" id="playground" aria-labelledby="playground-title">
             <div class="container">
-                <h2 class="section-title">Interactive Code Playground</h2>
-                <p class="section-subtitle">Try editing the code and see instant results!</p>
+                <h2 class="section-title" id="playground-title">Interactive Code Playground</h2>
+                <p class="section-subtitle">Try editing HTML, CSS, and JavaScript code and see instant results!</p>
                 
                 <div class="playground">
                     <div class="editor-panel">
@@ -237,9 +284,9 @@ document.getElementById('playBtn').addEventListener('click', function() {
         </section>
 
         <!-- Examples Section -->
-        <section class="section" id="examples">
+        <section class="section" id="examples" aria-labelledby="examples-title">
             <div class="container">
-                <h2 class="section-title">Real-World Examples</h2>
+                <h2 class="section-title" id="examples-title">Real-World Web Development Examples</h2>
                 
                 <div class="examples-grid">
                     <div class="example-card">
