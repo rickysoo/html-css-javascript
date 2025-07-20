@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Technologies Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Web Tech Showcase</h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#basics" class="nav-link">Basics</a></li>
+                    <li><a href="#integration" class="nav-link">Integration</a></li>
+                    <li><a href="#playground" class="nav-link">Playground</a></li>
+                    <li><a href="#examples" class="nav-link">Examples</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h2 class="hero-title">Learn How HTML, CSS & JavaScript Work Together</h2>
+                <p class="hero-subtitle">Interactive demonstrations and live code examples</p>
+                <div class="hero-demo">
+                    <div class="demo-card" id="heroDemo">
+                        <h3>Interactive Demo</h3>
+                        <p>Click me to see the magic!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basics Section -->
+        <section class="section" id="basics">
+            <div class="container">
+                <h2 class="section-title">The Three Pillars of Web Development</h2>
+                
+                <div class="pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon">🏗️</div>
+                        <h3>HTML</h3>
+                        <p>Structure & Content</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;div class="card"&gt;
+  &lt;h3&gt;Title&lt;/h3&gt;
+  &lt;p&gt;Content goes here&lt;/p&gt;
+  &lt;button&gt;Click me&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="pillar">
+                        <div class="pillar-icon">🎨</div>
+                        <h3>CSS</h3>
+                        <p>Style & Layout</p>
+                        <div class="code-example">
+                            <pre><code class="language-css">.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="pillar">
+                        <div class="pillar-icon">⚡</div>
+                        <h3>JavaScript</h3>
+                        <p>Behavior & Interaction</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">button.addEventListener('click', () => {
+  card.classList.toggle('active');
+  card.style.transform = 'scale(1.05)';
+});</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="section" id="integration">
+            <div class="container">
+                <h2 class="section-title">How They Work Together</h2>
+                
+                <div class="integration-demo">
+                    <div class="demo-tabs">
+                        <button class="tab-btn active" data-tab="step1">Step 1: HTML</button>
+                        <button class="tab-btn" data-tab="step2">Step 2: + CSS</button>
+                        <button class="tab-btn" data-tab="step3">Step 3: + JavaScript</button>
+                    </div>
+
+                    <div class="demo-content">
+                        <div class="tab-content active" id="step1">
+                            <div class="demo-split">
+                                <div class="code-panel">
+                                    <h4>HTML Only</h4>
+                                    <pre><code class="language-html">&lt;div class="demo-box"&gt;
+  &lt;h3&gt;Hello World&lt;/h3&gt;
+  &lt;p&gt;Basic HTML content&lt;/p&gt;
+  &lt;button&gt;Click me&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                                </div>
+                                <div class="preview-panel">
+                                    <h4>Result</h4>
+                                    <div class="preview basic-html">
+                                        <div class="demo-box-basic">
+                                            <h3>Hello World</h3>
+                                            <p>Basic HTML content</p>
+                                            <button>Click me</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="step2">
+                            <div class="demo-split">
+                                <div class="code-panel">
+                                    <h4>HTML + CSS</h4>
+                                    <pre><code class="language-css">.demo-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}</code></pre>
+                                </div>
+                                <div class="preview-panel">
+                                    <h4>Result</h4>
+                                    <div class="preview">
+                                        <div class="demo-box-styled">
+                                            <h3>Hello World</h3>
+                                            <p>Now with beautiful styling!</p>
+                                            <button class="styled-btn">Click me</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="step3">
+                            <div class="demo-split">
+                                <div class="code-panel">
+                                    <h4>HTML + CSS + JavaScript</h4>
+                                    <pre><code class="language-javascript">button.addEventListener('click', function() {
+  this.parentElement.classList.toggle('animated');
+  this.textContent = this.textContent === 'Click me' 
+    ? 'Clicked!' : 'Click me';
+});</code></pre>
+                                </div>
+                                <div class="preview-panel">
+                                    <h4>Result</h4>
+                                    <div class="preview">
+                                        <div class="demo-box-interactive" id="interactiveDemo">
+                                            <h3>Hello World</h3>
+                                            <p>Now interactive and dynamic!</p>
+                                            <button class="interactive-btn">Click me</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playground Section -->
+        <section class="section" id="playground">
+            <div class="container">
+                <h2 class="section-title">Interactive Code Playground</h2>
+                <p class="section-subtitle">Try editing the code and see instant results!</p>
+                
+                <div class="playground">
+                    <div class="editor-panel">
+                        <div class="editor-tabs">
+                            <button class="editor-tab active" data-editor="html">HTML</button>
+                            <button class="editor-tab" data-editor="css">CSS</button>
+                            <button class="editor-tab" data-editor="js">JavaScript</button>
+                        </div>
+                        
+                        <div class="editor-content">
+                            <textarea id="htmlEditor" class="editor active" placeholder="Enter HTML code...">
+&lt;div class="playground-demo"&gt;
+  &lt;h2&gt;Edit me!&lt;/h2&gt;
+  &lt;p&gt;Change this text&lt;/p&gt;
+  &lt;button id="playBtn"&gt;Click me&lt;/button&gt;
+&lt;/div&gt;</textarea>
+                            
+                            <textarea id="cssEditor" class="editor" placeholder="Enter CSS code...">
+.playground-demo {
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #4a90e2;
+  text-align: center;
+}
+
+button {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #357abd;
+}</textarea>
+                            
+                            <textarea id="jsEditor" class="editor" placeholder="Enter JavaScript code...">
+document.getElementById('playBtn').addEventListener('click', function() {
+  alert('Hello from the playground!');
+  this.style.background = '#ff6b6b';
+  this.textContent = 'Clicked!';
+});</textarea>
+                        </div>
+                    </div>
+
+                    <div class="result-panel">
+                        <h4>Live Preview</h4>
+                        <iframe id="preview" class="preview-frame"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section class="section" id="examples">
+            <div class="container">
+                <h2 class="section-title">Real-World Examples</h2>
+                
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h3>Dynamic Form Validation</h3>
+                        <div class="example-demo">
+                            <form class="demo-form" id="validationForm">
+                                <input type="email" placeholder="Enter email" id="emailInput">
+                                <span class="error-message" id="emailError"></span>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                        <details class="code-details">
+                            <summary>View Code</summary>
+                            <div class="code-tabs-mini">
+                                <div class="mini-tab">HTML</div>
+                                <pre><code class="language-html">&lt;form id="form"&gt;
+  &lt;input type="email" id="email"&gt;
+  &lt;span class="error"&gt;&lt;/span&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>Interactive Image Gallery</h3>
+                        <div class="example-demo">
+                            <div class="gallery">
+                                <div class="gallery-item active" style="background: linear-gradient(45deg, #ff6b6b, #feca57);">1</div>
+                                <div class="gallery-item" style="background: linear-gradient(45deg, #48cae4, #023e8a);">2</div>
+                                <div class="gallery-item" style="background: linear-gradient(45deg, #06ffa5, #8338ec);">3</div>
+                            </div>
+                        </div>
+                        <details class="code-details">
+                            <summary>View Code</summary>
+                            <div class="code-tabs-mini">
+                                <div class="mini-tab">CSS + JS</div>
+                                <pre><code class="language-css">.gallery-item.active {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}</code></pre>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>Animated Counter</h3>
+                        <div class="example-demo">
+                            <div class="counter-demo">
+                                <span class="counter" id="counter">0</span>
+                                <div class="counter-controls">
+                                    <button onclick="updateCounter(-1)">-</button>
+                                    <button onclick="updateCounter(1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <details class="code-details">
+                            <summary>View Code</summary>
+                            <div class="code-tabs-mini">
+                                <div class="mini-tab">JavaScript</div>
+                                <pre><code class="language-javascript">function updateCounter(change) {
+  const counter = document.getElementById('counter');
+  const newValue = parseInt(counter.textContent) + change;
+  counter.textContent = newValue;
+  counter.style.transform = 'scale(1.2)';
+  setTimeout(() => counter.style.transform = 'scale(1)', 200);
+}</code></pre>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Built with HTML, CSS & JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
