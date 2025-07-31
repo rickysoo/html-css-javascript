@@ -381,3 +381,142 @@ if ('performance' in window) {
         }, 0);
     });
 }
+
+// Modern Web Technologies Section Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Color picker demo functionality
+    const colorPicker = document.getElementById('colorPicker');
+    if (colorPicker) {
+        colorPicker.addEventListener('change', (e) => {
+            const color = e.target.value;
+            const label = e.target.nextElementSibling;
+            label.style.color = color;
+            label.textContent = `Pick a color (Currently: ${color})`;
+            
+            // Add a subtle animation to show the change
+            label.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                label.style.transform = 'scale(1)';
+            }, 200);
+        });
+    }
+
+    // Async JavaScript demo - Fetch random facts
+    const asyncDemo = document.getElementById('asyncDemo');
+    const factDisplay = document.getElementById('factDisplay');
+    
+    if (asyncDemo && factDisplay) {
+        // Array of educational facts about web development
+        const webFacts = [
+            "HTML5 was officially released in 2014, but browsers started supporting it much earlier!",
+            "CSS Grid was first proposed in 2011 but only became widely supported around 2017.",
+            "JavaScript was created by Brendan Eich in just 10 days in 1995!",
+            "React was open-sourced by Facebook in 2013 and revolutionized how we build user interfaces.",
+            "The first website ever created is still online at info.cern.ch!",
+            "CSS Flexbox was designed to solve the age-old problem of centering things in CSS.",
+            "Node.js allowed JavaScript to run on servers, making full-stack JavaScript development possible.",
+            "TypeScript was created by Microsoft to add type safety to JavaScript.",
+            "Progressive Web Apps can work offline and feel like native mobile apps.",
+            "The average website loads in about 3 seconds, but users expect it in under 2 seconds!"
+        ];
+
+        asyncDemo.addEventListener('click', async () => {
+            // Show loading state
+            asyncDemo.disabled = true;
+            asyncDemo.textContent = 'Loading...';
+            factDisplay.textContent = 'Fetching an interesting web development fact...';
+            factDisplay.style.opacity = '0.6';
+
+            // Simulate async operation with setTimeout (mimicking a real API call)
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Get random fact
+                const randomFact = webFacts[Math.floor(Math.random() * webFacts.length)];
+                
+                // Display the fact with animation
+                factDisplay.style.transition = 'all 0.3s ease';
+                factDisplay.textContent = `💡 ${randomFact}`;
+                factDisplay.style.opacity = '1';
+                factDisplay.style.background = 'var(--secondary-color)';
+                factDisplay.style.borderLeft = '4px solid var(--primary-color)';
+                
+            } catch (error) {
+                factDisplay.textContent = 'Oops! Something went wrong. This is why error handling is important in modern JavaScript!';
+                factDisplay.style.background = 'var(--accent-color)';
+                factDisplay.style.color = 'white';
+            } finally {
+                // Reset button
+                asyncDemo.disabled = false;
+                asyncDemo.textContent = 'Fetch Another Fact';
+            }
+        });
+    }
+
+    // Performance demo - animate loading bar
+    const loadingBar = document.getElementById('loadingBar');
+    if (loadingBar) {
+        const loadingFill = loadingBar.querySelector('.loading-fill');
+        
+        // Observer to trigger animation when section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Trigger the loading animation
+                    loadingFill.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(loadingBar);
+    }
+
+    // Add hover effects to modern cards
+    const modernCards = document.querySelectorAll('.modern-card');
+    modernCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            // Add a subtle glow effect
+            card.style.boxShadow = '0 8px 25px rgba(74, 144, 226, 0.3)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            // Remove glow effect
+            card.style.boxShadow = 'var(--shadow)';
+        });
+    });
+
+    // Add interactive hover effects to feature list items
+    const featureItems = document.querySelectorAll('.feature-list li');
+    featureItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'translateX(5px)';
+            item.style.borderLeft = '3px solid var(--primary-color)';
+        });
+
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'translateX(0)';
+            item.style.borderLeft = 'none';
+        });
+    });
+
+    // Animate summary items on scroll
+    const summaryItems = document.querySelectorAll('.summary-item');
+    const summaryObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.opacity = '1';
+                }, index * 200); // Stagger the animations
+            }
+        });
+    }, { threshold: 0.3 });
+
+    // Initially hide summary items for animation
+    summaryItems.forEach(item => {
+        item.style.transform = 'translateY(20px)';
+        item.style.opacity = '0';
+        item.style.transition = 'all 0.6s ease';
+        summaryObserver.observe(item);
+    });
+});
